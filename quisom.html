@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="ca">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Qui Som – Food Truck Bellvitge</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <!-- HEADER -->
+  <header>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+      <div class="container">
+        <a class="navbar-brand d-flex align-items-center" href="index.html" data-bs-toggle="tooltip" data-bs-title="Torna a l'inici">
+          <i class="fa-solid fa-truck-fast me-2"></i> Food Truck Bellvitge
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNavbar" aria-controls="mainNavbar" aria-expanded="false" aria-label="Toggle navigation" title="Obrir/tancar menú">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="mainNavbar">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" id="fredDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false" title="Plats freds">Freds</a>
+              <ul class="dropdown-menu" aria-labelledby="fredDropdown">
+                <li><a class="dropdown-item" href="fred1.html" data-bs-toggle="tooltip" data-bs-title="Entrepà pernil ibèric">Entrepà pernil ibèric</a></li>
+                <li><a class="dropdown-item" href="fred2.html" data-bs-toggle="tooltip" data-bs-title="Entrepà formatge">Entrepà formatge</a></li>
+                <li><a class="dropdown-item" href="fred3.html" data-bs-toggle="tooltip" data-bs-title="Amanida fresca">Amanida fresca</a></li>
+              </ul>
+            </li>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" id="calentDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false" title="Plats calents">Calents</a>
+              <ul class="dropdown-menu" aria-labelledby="calentDropdown">
+                <li><a class="dropdown-item" href="calent1.html">Hamburguesa especial</a></li>
+                <li><a class="dropdown-item" href="calent2.html">Frankfurt clàssic</a></li>
+                <li><a class="dropdown-item" href="calent3.html">Patates deluxe</a></li>
+              </ul>
+            </li>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" id="dolcosDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false" title="Postres i dolços">Dolços</a>
+              <ul class="dropdown-menu" aria-labelledby="dolcosDropdown">
+                <li><a class="dropdown-item" href="dolc1.html">Gelat Magnum</a></li>
+                <li><a class="dropdown-item" href="dolc2.html">Crep xocolata</a></li>
+                <li><a class="dropdown-item" href="dolc3.html">Brownie</a></li>
+              </ul>
+            </li>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" id="begudesDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false" title="Begudes">Begudes</a>
+              <ul class="dropdown-menu" aria-labelledby="begudesDropdown">
+                <li><a class="dropdown-item" href="beguda1.html">Coca-Cola</a></li>
+                <li><a class="dropdown-item" href="beguda2.html">Cervesa</a></li>
+                <li><a class="dropdown-item" href="beguda3.html">Aigua amb gas</a></li>
+              </ul>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link active" href="quisom.html" data-bs-toggle="tooltip" data-bs-title="Coneix la nostra història">Qui som</a>
+            </li>
+          </ul>
+          <div class="d-flex">
+            <button class="btn btn-outline-light me-2" id="btnLogin" data-bs-toggle="modal" data-bs-target="#loginModal" title="Inicia sessió">
+              <i class="fa-solid fa-right-to-bracket"></i>
+            </button>
+            <button class="btn btn-outline-danger" id="btnLogout" data-bs-toggle="tooltip" data-bs-title="Tanca sessió" disabled>
+              <i class="fa-solid fa-right-from-bracket"></i>
+            </button>
+          </div>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <!-- MODAL LOGIN -->
+  <div class="modal fade" id="loginModal" tabindex="-1" aria-labelledby="loginModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-sm modal-login-position">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="loginModalLabel">Inicia sessió</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <form id="loginForm">
+            <div class="mb-3"><label for="username" class="form-label">Usuari</label><input type="text" class="form-control" id="username" placeholder="Introdueix el teu nom" required></div>
+            <div class="mb-3"><label for="password" class="form-label">Contrasenya</label><input type="password" class="form-control" id="password" placeholder="********" required></div>
+            <div class="d-flex justify-content-end">
+              <button type="submit" class="btn btn-primary me-2" data-bs-toggle="tooltip" data-bs-title="Envia credencials">Enviar</button>
+              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal" data-bs-toggle="tooltip" data-bs-title="Cancel·la el login">Cancel·lar</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="mt-5 pt-4"></div>
+
+  <!-- BODY -->
+  <main class="container my-4">
+
+    <!-- BREADCRUMB -->
+    <nav aria-label="breadcrumb" class="mb-4">
+      <ol class="breadcrumb">
+        <li class="breadcrumb-item"><a href="index.html">Inici</a></li>
+        <li class="breadcrumb-item active" aria-current="page">Qui som</li>
+      </ol>
+    </nav>
+
+    <!-- HERO QUI SOM -->
+    <div class="hero-section mb-5">
+      <img src="https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?w=1400&q=80" alt="El nostre equip al Food Truck">
+      <div class="hero-overlay">
+        <h1><i class="fa-solid fa-people-group me-2"></i> Qui Som</h1>
+        <p>Passió per la cuina de carrer des del 2018</p>
+      </div>
+    </div>
+
+    <!-- LA NOSTRA HISTORIA -->
+    <div class="row g-5 mb-5 align-items-center">
+      <div class="col-12 col-md-6">
+        <h2 class="section-title">La nostra història</h2>
+        <p>El <strong>Food Truck Bellvitge</strong> va néixer el <strong>2018</strong> com un somni de dos amics amb una passió compartida: oferir menjar de qualitat, fresc i assequible als veïns i visitants del barri de Bellvitge, a L'Hospitalet de Llobregat.</p>
+        <p>Tot va començar amb una furgoneta Volkswagen T2 restaurada, uns quants entrepans i molta il·lusió. Avui, amb el pas dels anys, hem crescut fins a tenir un equip de 5 persones i una carta àmplia que inclou plats freds i calents, postres casolanes i begudes seleccionades.</p>
+        <p>El nostre secret? Ingredients frescos de proximitat, receptes pròpies i, sobretot, l'amor que posem en cada plat que servim.</p>
+      </div>
+      <div class="col-12 col-md-6">
+        <img src="https://images.unsplash.com/photo-1565123409695-7b5ef63a2efb?w=800&q=80"
+             alt="Food Truck exterior"
+             class="img-fluid rounded-4 shadow">
+      </div>
+    </div>
+
+    <!-- EL NOSTRE EQUIP -->
+    <h2 class="section-title mb-4">El nostre equip</h2>
+    <div class="row g-4 mb-5">
+      <div class="col-12 col-sm-6 col-lg-3">
+        <div class="card text-center h-100 p-3" data-bs-toggle="tooltip" data-bs-title="Fundador i xef principal">
+          <img src="https://images.unsplash.com/photo-1607631568010-a87245c0daf8?w=400&q=80" alt="Marc Rovira" class="rounded-circle mx-auto mb-3" style="width:100px;height:100px;object-fit:cover;">
+          <h5 class="card-title mb-0">Marc Rovira</h5>
+          <p class="text-muted small">Fundador & Xef</p>
+          <p class="card-text small">Format a l'escola de cuina Bellart de Barcelona, Marc és l'ànima del Food Truck.</p>
+        </div>
+      </div>
+      <div class="col-12 col-sm-6 col-lg-3">
+        <div class="card text-center h-100 p-3" data-bs-toggle="tooltip" data-bs-title="Co-fundadora i gestió">
+          <img src="https://images.unsplash.com/photo-1580489944761-15a19d654956?w=400&q=80" alt="Laia Puig" class="rounded-circle mx-auto mb-3" style="width:100px;height:100px;object-fit:cover;">
+          <h5 class="card-title mb-0">Laia Puig</h5>
+          <p class="text-muted small">Co-fundadora & Gestió</p>
+          <p class="card-text small">Encarregada de l'organització, els proveïdors i que tot funcioni com un rellotge.</p>
+        </div>
+      </div>
+      <div class="col-12 col-sm-6 col-lg-3">
+        <div class="card text-center h-100 p-3" data-bs-toggle="tooltip" data-bs-title="Xef de postres">
+          <img src="https://images.unsplash.com/photo-1566753323558-f4e0952af115?w=400&q=80" alt="Pau Ferrer" class="rounded-circle mx-auto mb-3" style="width:100px;height:100px;object-fit:cover;">
+          <h5 class="card-title mb-0">Pau Ferrer</h5>
+          <p class="text-muted small">Xef de Postres</p>
+          <p class="card-text small">El responsable dels nostres brownies i creps que han fet addictes a tot el barri.</p>
+        </div>
+      </div>
+      <div class="col-12 col-sm-6 col-lg-3">
+        <div class="card text-center h-100 p-3" data-bs-toggle="tooltip" data-bs-title="Servei al client">
+          <img src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=400&q=80" alt="Núria Camps" class="rounded-circle mx-auto mb-3" style="width:100px;height:100px;object-fit:cover;">
+          <h5 class="card-title mb-0">Núria Camps</h5>
+          <p class="text-muted small">Atenció al Client</p>
+          <p class="card-text small">La cara amable del Food Truck. Sempre amb un somriure i una recomanació.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- ON ENS TROBES -->
+    <div class="row g-4 mb-5">
+      <div class="col-12 col-md-6">
+        <h2 class="section-title">On ens trobes</h2>
+        <ul class="list-group list-group-flush mb-3">
+          <li class="list-group-item"><i class="fa-solid fa-location-dot me-2 text-danger"></i><strong>Ubicació habitual:</strong> Plaça de Bellvitge, L'Hospitalet de Llobregat</li>
+          <li class="list-group-item"><i class="fa-solid fa-train me-2 text-primary"></i><strong>Metro:</strong> L1 Bellvitge (5 min a peu)</li>
+          <li class="list-group-item"><i class="fa-solid fa-bus me-2 text-warning"></i><strong>Bus:</strong> Línies L77, L79 i L94</li>
+          <li class="list-group-item"><i class="fa-solid fa-car me-2 text-success"></i><strong>Aparcament:</strong> Pàrquing públic a 200 m</li>
+          <li class="list-group-item"><i class="fa-regular fa-clock me-2 text-info"></i><strong>Horaris:</strong> Dl–Dv 8:00–21:00 | Dissabte 10:00–22:00</li>
+        </ul>
+        <div class="ratio ratio-4x3 rounded-4 overflow-hidden shadow">
+          <iframe
+            src="https://www.openstreetmap.org/export/embed.html?bbox=2.0836%2C41.3570%2C2.0936%2C41.3630&layer=mapnik"
+            style="border:0;" allowfullscreen="" loading="lazy" title="Mapa ubicació Food Truck Bellvitge">
+          </iframe>
+        </div>
+      </div>
+
+      <!-- CONTACTE -->
+      <div class="col-12 col-md-6">
+        <h2 class="section-title">Contacta'ns</h2>
+        <ul class="list-group list-group-flush mb-4">
+          <li class="list-group-item"><i class="fa-solid fa-phone me-2 text-success"></i><strong>Telèfon:</strong> <a href="tel:+34931234567" data-bs-toggle="tooltip" data-bs-title="Truca'ns">+34 93 123 45 67</a></li>
+          <li class="list-group-item"><i class="fa-solid fa-envelope me-2 text-primary"></i><strong>Email:</strong> <a href="mailto:hola@foodtruckbellvitge.cat" data-bs-toggle="tooltip" data-bs-title="Envia'ns un correu">hola@foodtruckbellvitge.cat</a></li>
+          <li class="list-group-item"><i class="fa-brands fa-instagram me-2 text-danger"></i><strong>Instagram:</strong> <a href="#" data-bs-toggle="tooltip" data-bs-title="Segueix-nos a Instagram">@foodtruckbellvitge</a></li>
+          <li class="list-group-item"><i class="fa-brands fa-facebook me-2 text-primary"></i><strong>Facebook:</strong> <a href="#" data-bs-toggle="tooltip" data-bs-title="Segueix-nos a Facebook">Food Truck Bellvitge</a></li>
+        </ul>
+
+        <!-- FORMULARI CONTACTE -->
+        <h5 class="fw-bold mb-3"><i class="fa-solid fa-paper-plane me-2" style="color:var(--brand-orange)"></i>Envia'ns un missatge</h5>
+        <form>
+          <div class="mb-3">
+            <label for="contactNom" class="form-label">Nom</label>
+            <input type="text" class="form-control" id="contactNom" placeholder="El teu nom" required>
+          </div>
+          <div class="mb-3">
+            <label for="contactEmail" class="form-label">Email</label>
+            <input type="email" class="form-control" id="contactEmail" placeholder="correu@exemple.com" required>
+          </div>
+          <div class="mb-3">
+            <label for="contactMissatge" class="form-label">Missatge</label>
+            <textarea class="form-control" id="contactMissatge" rows="4" placeholder="Escriu el teu missatge aquí..." required></textarea>
+          </div>
+          <button type="submit" class="btn btn-hero w-100" data-bs-toggle="tooltip" data-bs-title="Envia el teu missatge">
+            <i class="fa-solid fa-paper-plane me-2"></i>Enviar missatge
+          </button>
+        </form>
+      </div>
+    </div>
+
+    <!-- VALORS -->
+    <h2 class="section-title mb-4">Els nostres valors</h2>
+    <div class="row g-4 mb-4">
+      <div class="col-12 col-sm-6 col-lg-3">
+        <div class="card text-center p-3 h-100" data-bs-toggle="tooltip" data-bs-title="Qualitat en tot moment">
+          <i class="fa-solid fa-medal fa-2x mb-3" style="color:var(--brand-orange)"></i>
+          <h5 class="card-title">Qualitat</h5>
+          <p class="card-text small">Ingredients frescos de proximitat, seleccionats cada dia.</p>
+        </div>
+      </div>
+      <div class="col-12 col-sm-6 col-lg-3">
+        <div class="card text-center p-3 h-100" data-bs-toggle="tooltip" data-bs-title="Compromís amb la sostenibilitat">
+          <i class="fa-solid fa-leaf fa-2x mb-3 text-success"></i>
+          <h5 class="card-title">Sostenibilitat</h5>
+          <p class="card-text small">Embalatges reciclables i reducció del malbaratament alimentari.</p>
+        </div>
+      </div>
+      <div class="col-12 col-sm-6 col-lg-3">
+        <div class="card text-center p-3 h-100" data-bs-toggle="tooltip" data-bs-title="Proximitat i comunitat">
+          <i class="fa-solid fa-heart fa-2x mb-3 text-danger"></i>
+          <h5 class="card-title">Comunitat</h5>
+          <p class="card-text small">Som del barri i treballem per al barri. Bellvitge és la nostra llar.</p>
+        </div>
+      </div>
+      <div class="col-12 col-sm-6 col-lg-3">
+        <div class="card text-center p-3 h-100" data-bs-toggle="tooltip" data-bs-title="Innovació constant">
+          <i class="fa-solid fa-lightbulb fa-2x mb-3 text-warning"></i>
+          <h5 class="card-title">Innovació</h5>
+          <p class="card-text small">Carta en constant renovació amb novetats cada temporada.</p>
+        </div>
+      </div>
+    </div>
+
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="text-light py-5 mt-auto">
+    <div class="container">
+      <div class="row g-4">
+        <div class="col-12 col-md-4">
+          <h5 class="fw-bold mb-3" style="color:var(--brand-orange)"><i class="fa-solid fa-truck-fast me-2"></i> Food Truck Bellvitge</h5>
+          <p class="small opacity-75">Menjar ràpid de qualitat des del 2018. Trobaràs el nostre truck cada dia a la Plaça de Bellvitge.</p>
+        </div>
+        <div class="col-6 col-md-4">
+          <h6 class="fw-bold mb-3" style="color:var(--brand-orange)"><i class="fa-regular fa-clock me-1"></i> Horaris</h6>
+          <ul class="list-unstyled small opacity-75">
+            <li>Dl – Dv: 8:00 – 21:00</li>
+            <li>Dissabte: 10:00 – 22:00</li>
+            <li>Diumenge: Tancat</li>
+          </ul>
+        </div>
+        <div class="col-6 col-md-4">
+          <h6 class="fw-bold mb-3" style="color:var(--brand-orange)"><i class="fa-solid fa-share-nodes me-1"></i> Segueix-nos</h6>
+          <div class="footer-icons">
+            <a href="#" class="text-light me-3" data-bs-toggle="tooltip" data-bs-title="Instagram"><i class="fa-brands fa-instagram"></i></a>
+            <a href="#" class="text-light me-3" data-bs-toggle="tooltip" data-bs-title="Facebook"><i class="fa-brands fa-facebook"></i></a>
+            <a href="#" class="text-light" data-bs-toggle="tooltip" data-bs-title="X (Twitter)"><i class="fa-brands fa-x-twitter"></i></a>
+          </div>
+        </div>
+      </div>
+      <hr class="opacity-25 my-4">
+      <p class="text-center small opacity-50 mb-0">&copy; 2026 Food Truck Bellvitge — Tots els drets reservats</p>
+    </div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      document.querySelectorAll('[data-bs-toggle="tooltip"]').forEach(el => new bootstrap.Tooltip(el));
+      const loginForm = document.getElementById('loginForm');
+      const btnLogout = document.getElementById('btnLogout');
+      const navbarBrand = document.querySelector('.navbar-brand');
+      const modal = new bootstrap.Modal(document.getElementById('loginModal'));
+      loginForm.addEventListener('submit', function(e) {
+        e.preventDefault();
+        const name = document.getElementById('username').value.trim();
+        if (name) { navbarBrand.innerHTML = '<i class="fa-solid fa-truck-fast me-2"></i> Benvingut, ' + name; btnLogout.disabled = false; modal.hide(); }
+      });
+      btnLogout.addEventListener('click', function() {
+        navbarBrand.innerHTML = '<i class="fa-solid fa-truck-fast me-2"></i> Food Truck Bellvitge';
+        btnLogout.disabled = true;
+      });
+    });
+  </script>
+</body>
+</html>
